@@ -18,7 +18,7 @@ const ConnectFour = () => {
     <Flex
       color="white"
       align="center"
-      backgroundImage={`url(https://next-games-app.vercel.app/ArcadeBG.jpg)`}
+      backgroundImage={`url(/ArcadeBG.jpg)`}
       minH="100vh"
       backgroundSize="cover"
       backgroundPosition="center"
