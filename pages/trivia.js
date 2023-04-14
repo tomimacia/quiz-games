@@ -117,7 +117,7 @@ function trivia() {
       {currentQuestion === 10 && (
         <Flex flexDir="column" align="center" p={10} m={10}>
           <Heading>The End!</Heading>
-          <Heading>Anserwers correct: {questionsCorrect}</Heading>
+          <Heading>Answers correct: {questionsCorrect}</Heading>
           <Button mt={5} className="nes-btn" onClick={restart}>
             Play again
           </Button>
