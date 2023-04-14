@@ -11,6 +11,7 @@ export const useSetPlayer = () => {
     if (!name || name.lenght === 0) {
       toast({
         title: `Please select a name`,
+        position:'top',
         status: "error",
         isClosable: true,
       });
@@ -19,6 +20,7 @@ export const useSetPlayer = () => {
     if (name === playerOne.name) {
       toast({
         title: `Please select a different name`,
+        position:'top',
         status: "error",
         isClosable: true,
       });
@@ -28,6 +30,7 @@ export const useSetPlayer = () => {
     if (!color || color === playerOne.color) {
       toast({
         title: `Please pick a color`,
+        position:'top',
         status: "error",
         isClosable: true,
       });
