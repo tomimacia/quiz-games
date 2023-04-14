@@ -21,7 +21,7 @@ const Home = () => {
       <link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css" />
 
       <Stack>
-        <Heading mb={50} color="white">
+        <Heading m={10} mb={50} color="white">
           Welcome to quiz games!
         </Heading>
         <Flex p={5} flexDir="column" align="center">
