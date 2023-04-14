@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useToast } from "@chakra-ui/react";
 
 export const useSetPlayer = () => {
+  const toast = useToast()
   const [showBoard, setShowBoard] = useState(false);
   const [playerOne, setPlayerOne] = useState({ name: "", color: "" });
   const [playerTwo, setPlayerTwo] = useState({ name: "", color: "" });
