@@ -8,6 +8,7 @@ import {
 import Link from "next/link";
 import "@fontsource/press-start-2p/400.css";
 import Head from "next/head";
+import ArcadeBG from "../public/ArcadeBG.jpg"
 const Home = () => {
   const PAGES = ["Trivia", "ConnectFour", "Squares"];
   return (
@@ -15,7 +16,7 @@ const Home = () => {
       h="100vh"
       align="center"
       flexDir="column"
-      backgroundImage={`url(/ArcadeBG.jpg)`}
+      backgroundImage={ArcadeBG.src}
       backgroundSize="cover"
       backgroundPosition="center"
     >
