@@ -40,6 +40,7 @@ const Squares = () => {
           <Button
             mt={5}
             bg="white"
+            _hover='gray'
             className="nes-btn"
             size="sm"
             onClick={restart}

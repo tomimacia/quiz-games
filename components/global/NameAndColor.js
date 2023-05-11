@@ -69,6 +69,7 @@ export const NameAndColor = ({ submit, num, remove }) => {
         }}
         _hover={{ bg: "grey" }}
         color="black"
+        className="nes-btn"
         bg='white'
       >
         Confirm
