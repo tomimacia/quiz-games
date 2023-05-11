@@ -69,6 +69,7 @@ export const NameAndColor = ({ submit, num, remove }) => {
         }}
         _hover={{ bg: "grey" }}
         color="black"
+        bg='white'
       >
         Confirm
       </Button>

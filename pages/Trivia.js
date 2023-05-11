@@ -55,7 +55,12 @@ function Trivia() {
         <Progress bg="transparent" mt={10} colorScheme="blue" isIndeterminate />
       )}
       {!loading && ready && currentQuestion < 10 && (
-        <Flex flexDir="column" ml={12}>
+        <Flex
+          justify="flex-start"
+          w={["100%", "100%", "100%", "940px"]}
+          flexDir="column"
+          pl={12}
+        >
           <Heading
             p={5}
             placeSelf="center"
@@ -63,7 +68,7 @@ function Trivia() {
           >
             {timer}
           </Heading>
-          <Stack>
+          <Stack minW="90%">
             {fetchedQuestions.length && (
               <Question question={question}>
                 {shuffledAnswers.map((q, i) => {
@@ -102,9 +107,13 @@ function Trivia() {
 
       {currentQuestion === 10 && (
         <Flex flexDir="column" p={10} m={10}>
-          <Text fontSize={17} fontWeight='bold' color='black'>The End!</Text>
-          <Text fontSize={17} fontWeight='bold' color='black'>Answers correct: {questionsCorrect}</Text>
-          <Button bg='white' mt={5} className="nes-btn" onClick={restart}>
+          <Text fontSize={17} fontWeight="bold" color="black">
+            The End!
+          </Text>
+          <Text fontSize={17} fontWeight="bold" color="black">
+            Answers correct: {questionsCorrect}
+          </Text>
+          <Button bg="white" mt={5} className="nes-btn" onClick={restart}>
             Play again
           </Button>
         </Flex>

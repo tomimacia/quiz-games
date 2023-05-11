@@ -24,13 +24,8 @@ const Squares = () => {
   } = useSquaresBoardWinner();
   return (
     <Layout title="Squares">
-      <Flex flexDir="column">
-        <Heading mb={5}>Squares!</Heading>
-        {!showBoard && (
-          <PickGame setLan={setGameMode} setOnline={setGameMode} />
-        )}
-      </Flex>
-      <Link href="/">Back home</Link>
+      {!showBoard && <PickGame setLan={setGameMode} setOnline={setGameMode} />}
+
       {gameMode === "LAN" &&
         !showBoard &&
         (!playerOne.name ? (

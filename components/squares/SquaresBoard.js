@@ -51,14 +51,14 @@ export const SquaresBoard = ({
                         cy={(col * 320) / (dots.length - 0.5) + 10}
                         r={
                           hover === row + "" + col || color !== "white"
-                            ? 17 - dots.length
-                            : 15 - dots.length
+                            ? 18 - dots.length
+                            : 17 - dots.length
                         }
                         fill={color}
                         onMouseOver={() => onMouseOver(row + "" + col)}
                         onMouseLeave={() => setHover("")}
-                        stroke="black"
-                        style={{ padding: 20 }}
+                        stroke="transparent"
+                        strokeWidth={15}                        
                         onClick={() => click(row, col)}
                         opacity={winner ? getOpacity(col, row) : 1}
                       />
