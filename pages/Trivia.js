@@ -16,7 +16,7 @@ function Trivia() {
   const [questionAnswered, setQuestionAnswered] = useState(false);
   const { fetchedQuestions, loading, reFetch } = useFetch(URL);
   const [ready, setReady] = useState(false);
-  const timer = useTimer(20, currentQuestion, questionAnswered);
+  const timer = useTimer(20, currentQuestion, questionAnswered, ready);
   const { question, shuffledAnswers, correctAnswer } =
     fetchedQuestions.length &&
     currentQuestion < 10 &&
@@ -68,7 +68,7 @@ function Trivia() {
           >
             {timer}
           </Heading>
-          <Stack minW="90%">
+          <Stack gap={3} minW="90%">
             {fetchedQuestions.length && (
               <Question question={question}>
                 {shuffledAnswers.map((q, i) => {
