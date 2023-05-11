@@ -4,6 +4,7 @@ export const useTimer = (
   startingTime,
   currentQuestion,
   questionAnswered,  
+  ready
 ) => {
   const [timer, setTimer] = useState(startingTime);
 
@@ -12,12 +13,15 @@ export const useTimer = (
   }, [currentQuestion]);
 
   useEffect(() => {
-    const customTimeout = setInterval(() => {
-      if (questionAnswered) return;
-      if (timer > 0) setTimer((prev) => prev - 1);
-    }, 1000);    
-    return () => clearInterval(customTimeout);
-  }, [timer, questionAnswered]);
+    if(ready){
+      const customTimeout = setInterval(() => {
+        if (questionAnswered) return;
+        if (timer > 0) setTimer((prev) => prev - 1);
+      }, 1000);    
+      return () => clearInterval(customTimeout);
+    }
+    
+  }, [timer, questionAnswered,ready]);
 
   return timer;
 };
