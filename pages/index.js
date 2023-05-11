@@ -7,8 +7,9 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import "@fontsource/press-start-2p/400.css";
+import Head from "next/head";
 const Home = () => {
-  const pages = ["trivia", "ConnectFour", "Squares"];
+  const PAGES = ["Trivia", "ConnectFour", "Squares"];
   return (
     <Flex
       h="100vh"
@@ -16,9 +17,12 @@ const Home = () => {
       flexDir="column"
       backgroundImage={`url(/ArcadeBG.jpg)`}
       backgroundSize="cover"
-      backgroundPosition='center'
+      backgroundPosition="center"
     >
-      <link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css" />
+      <Head>
+        <link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css" />
+        <title>Quiz Games</title>
+      </Head>
 
       <Stack>
         <Heading m={10} mb={50} color="white">
@@ -29,9 +33,9 @@ const Home = () => {
             Pick your game
           </Heading>
           <UnorderedList>
-            {pages.map((page, i) => {
+            {PAGES.map((page, i) => {
               return (
-                <ListItem key={i} pt={10}>
+                <ListItem listStyleType="none" key={i} pt={10}>
                   <Link href={`/${page}`} className="nes-btn">
                     {page}
                   </Link>

@@ -1,17 +1,17 @@
-import { Heading, OrderedList } from "@chakra-ui/react";
+import { Flex, Heading, OrderedList, Text } from "@chakra-ui/react";
 
 export const Question = ({  
   question,
   children
 }) => {
   return (
-    <>
-      <Heading mb={5} fontSize={20}>
+    <Flex flexDir='column'>
+      <Text color='black' mb={5} fontSize={18}>
         {question}
-      </Heading>
-      <OrderedList spacing={10}>
+      </Text>
+      <OrderedList color='black' spacing={4}>
         {children}
       </OrderedList>
-    </>
+    </Flex>
   );
 };

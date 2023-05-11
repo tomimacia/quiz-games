@@ -3,10 +3,13 @@ import "@fontsource/press-start-2p/400.css";
 import "nes.css/css/nes.min.css";
 
 const theme = extendTheme({
-    fonts: {    
-      body: "'Press Start 2P'",
-      heading: "'Press Start 2P'",
-    }
-  });
+  fonts: {
+    body: "'Press Start 2P'",
+    heading: "'Press Start 2P'",
+  },
+  Button: {
+    solid: { color: "red" },
+  },
+});
 
-export default  theme;
+export default theme;
