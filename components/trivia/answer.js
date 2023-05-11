@@ -7,7 +7,7 @@ export const Answer = ({ answerBg, clickAnswer, a }) => {
       className="nes-pointer"
       bg={answerBg}
       onClick={clickAnswer}
-      fontSize={25}
+      fontSize={15}
     >
       {a}
     </ListItem>

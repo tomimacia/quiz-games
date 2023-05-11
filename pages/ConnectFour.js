@@ -1,13 +1,13 @@
-import { Button, Flex, Heading, Stack, Text } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { Flex, Heading, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import { useState } from "react";
-import { ConnectFourBoard } from "../components/connectFour/connectFourBoard";
-import { NameAndColor } from "../components/global/nameAndColor";
-import { PickGame } from "../components/global/pickGame";
+import { ConnectFourBoard } from "../components/connectFour/ConnectFourBoard";
+import { NameAndColor } from "../components/global/NameAndColor";
+import { PickGame } from "../components/global/PickGame";
+import { RestartGame } from "../components/global/RestartGame";
 import { useConnectBoardWinner } from "../hooks/useConnectBoardWinner";
 import { useSetPlayer } from "../hooks/useSetPlayer";
-
+import Layout from "../components/Layout";
 const ConnectFour = () => {
   const [gameMode, setGameMode] = useState(null);
   const { playerOne, playerTwo, showBoard, setPlayer } = useSetPlayer();
@@ -15,15 +15,7 @@ const ConnectFour = () => {
     useConnectBoardWinner();
 
   return (
-    <Flex
-      color="white"
-      align="center"
-      backgroundImage={`url(/ArcadeBG.jpg)`}
-      minH="100vh"
-      backgroundSize="cover"
-      backgroundPosition="center"
-      flexDir="column"
-    >
+    <Layout title='Connect Four'>
       <Flex flexDir="column">
         <Heading mb={5}>Connect Four!</Heading>
         {!showBoard && (
@@ -57,37 +49,13 @@ const ConnectFour = () => {
           />
         </>
       )}
-      {winner && (
-        <Stack
-          as={motion.div}
-          zIndex={10}
-          position="absolute"
-          spacing={10}
-          mt="160px"
-          initial={{ y: -500 }}
-          animate={{ y: 50 }}
-          transitionDuration={"1s"}
-          p={5}
-          borderRadius="20px"
-          bg={"blackAlpha.500"}
-        >
-          <Heading>
-            {winner === 3
-              ? "Its a tie!"
-              : `The Winner is ${(winner === 1 ? playerOne : playerTwo).name}`}
-          </Heading>
-
-          <Button
-            alignSelf="center"
-            w="60%"
-            className="nes-btn"
-            onClick={restart}
-          >
-            Restart game
-          </Button>
-        </Stack>
-      )}
-    </Flex>
+      <RestartGame
+        winner={winner}
+        playerOne={playerOne}
+        playerTwo={playerTwo}
+        restart={restart}
+      />
+    </Layout>
   );
 };
 

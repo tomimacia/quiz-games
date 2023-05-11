@@ -1,17 +1,17 @@
 import {
-    Box,
-    Button,
-    Flex,
-    Heading,
-    Slider,
-    SliderFilledTrack,
-    SliderMark,
-    SliderThumb,
-    SliderTrack
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Slider,
+  SliderFilledTrack,
+  SliderMark,
+  SliderThumb,
+  SliderTrack,
 } from "@chakra-ui/react";
 import { useState } from "react";
 
-export const PickBoardLength = ({handleClick}) => {
+export const PickBoardLength = ({ handleClick }) => {
   const posibleLenghts = [5, 6, 7, 8, 9, 10, 11];
   const [sliderValue, setSliderValue] = useState(7);
   const labelStyles = {
@@ -27,14 +27,16 @@ export const PickBoardLength = ({handleClick}) => {
       gap={5}
       flexDir="column"
     >
-      <Heading as={'h3'} size='md'>Pick the board length</Heading>
-      <Slider        
+      <Heading as={"h3"} size="md">
+        Pick the board length
+      </Heading>
+      <Slider
         onChange={(val) => setSliderValue(val)}
         mt={10}
         mb={10}
         defaultValue={7}
         min={5}
-        max={11}        
+        max={11}
       >
         {posibleLenghts.map((len) => {
           return (
@@ -45,12 +47,12 @@ export const PickBoardLength = ({handleClick}) => {
         })}
         <SliderMark
           value={sliderValue}
-          textAlign="center"                  
-          borderRadius='10'          
+          textAlign="center"
+          borderRadius="10"
           color="white"
           mt="-46px"
           ml="-3"
-          w={sliderValue < 10 ? "25px" : "40px"}                    
+          w={sliderValue < 10 ? "25px" : "40px"}
         >
           {sliderValue}
         </SliderMark>
@@ -60,7 +62,16 @@ export const PickBoardLength = ({handleClick}) => {
         </SliderTrack>
         <SliderThumb boxSize={6} />
       </Slider>
-      <Button onClick={()=>handleClick(sliderValue)} size='sm' placeSelf='center' w='50%' className='nes-btn' _hover={{ bg: "grey" }} color="black">
+      <Button
+        onClick={() => handleClick(sliderValue)}
+        size="sm"
+        bg='white'
+        placeSelf="center"
+        w="50%"
+        className="nes-btn"
+        _hover={{ bg: "grey" }}
+        color="black"
+      >
         Confirm
       </Button>
     </Flex>

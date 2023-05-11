@@ -3,16 +3,17 @@ import React from 'react'
 
 export const NotReady = ({callback}) => {
   return (
-    <Flex mt={20} placeContent="center">
+    <Flex mt={[5,10,15,20]} placeContent="center">
           <Flex gap={10} flexDir="column">
-            <Heading>Welcome!</Heading>
-            <Heading size="md">Are you ready?</Heading>            
+            <Heading color='black'>Welcome!</Heading>
+            <Heading size="md" color='black'>Are you ready?</Heading>            
             <Button
               placeSelf="center"
               size="sm"
               w="50%"
               onClick={callback}
               className="nes-btn"
+              bg='white'
             >
               Start
             </Button>
