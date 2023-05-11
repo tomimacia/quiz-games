@@ -1,6 +1,6 @@
-import { Button, Flex, Heading, Text } from "@chakra-ui/react";
-import Link from "next/link";
+import { Button, Text } from "@chakra-ui/react";
 import { useState } from "react";
+import Layout from "../components/Layout";
 import { NameAndColor } from "../components/global/NameAndColor";
 import { PickGame } from "../components/global/PickGame";
 import { RestartGame } from "../components/global/RestartGame";
@@ -8,7 +8,6 @@ import { PickBoardLength } from "../components/squares/PickBoardLength";
 import { SquaresBoard } from "../components/squares/SquaresBoard";
 import { useSetPlayer } from "../hooks/useSetPlayer";
 import { useSquaresBoardWinner } from "../hooks/useSquaresBoardWinner";
-import Layout from "../components/Layout";
 
 const Squares = () => {
   const [gameMode, setGameMode] = useState(null);

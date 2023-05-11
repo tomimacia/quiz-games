@@ -21,7 +21,7 @@ const Layout = ({ title , isTrivia, opacity, children }) => {
         <title>{title}</title>
       </Head>
       <Flex flexDir="column">
-        <Heading mb={5} color={isTrivia ? "black" : "white"}>
+        <Heading m={5} color={isTrivia ? "black" : "white"}>
           {title}!
         </Heading>
         <Link href="/">

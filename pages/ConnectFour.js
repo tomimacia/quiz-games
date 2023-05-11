@@ -15,14 +15,9 @@ const ConnectFour = () => {
     useConnectBoardWinner();
 
   return (
-    <Layout title='Connect Four'>
-      <Flex flexDir="column">
-        <Heading mb={5}>Connect Four!</Heading>
-        {!showBoard && (
-          <PickGame setLan={setGameMode} setOnline={setGameMode} />
-        )}
-      </Flex>
-      <Link href="/">Back home</Link>
+    <Layout title="Connect Four">
+      {!showBoard && <PickGame setLan={setGameMode} setOnline={setGameMode} />}
+
       {gameMode === "LAN" &&
         !showBoard &&
         (!playerOne.name ? (
