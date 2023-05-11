@@ -7,8 +7,12 @@ const theme = extendTheme({
     body: "'Press Start 2P'",
     heading: "'Press Start 2P'",
   },
-  Button: {
-    solid: { color: "red" },
+  components: {
+    Button: {
+      color: {
+        _hover: "red",
+      },
+    },
   },
 });
 

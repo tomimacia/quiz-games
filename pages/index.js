@@ -1,4 +1,5 @@
 import {
+  Button,
   Flex,
   Heading,
   ListItem,
@@ -8,7 +9,7 @@ import {
 import Link from "next/link";
 import "@fontsource/press-start-2p/400.css";
 import Head from "next/head";
-import ArcadeBG from "../public/ArcadeBG.jpg"
+import ArcadeBG from "../public/ArcadeBG.jpg";
 const Home = () => {
   const PAGES = ["Trivia", "ConnectFour", "Squares"];
   return (
@@ -37,9 +38,9 @@ const Home = () => {
             {PAGES.map((page, i) => {
               return (
                 <ListItem listStyleType="none" key={i} pt={10}>
-                  <Link href={`/${page}`} className="nes-btn">
+                  <Button as={Link} bg='white' _hover={{bg:"gray"}} href={`/${page}`} className="nes-btn">
                     {page}
-                  </Link>
+                  </Button>
                 </ListItem>
               );
             })}

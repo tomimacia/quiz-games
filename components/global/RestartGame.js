@@ -31,6 +31,7 @@ export const RestartGame = ({ winner,playerOne,playerTwo,restart }) => {
           alignSelf="center"
           w="60%"
           bg="white"
+          _hover='gray'
           size={["sm", "md", "md", "lg"]}
           className="nes-btn"
           onClick={restart}
