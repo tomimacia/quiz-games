@@ -6,14 +6,7 @@ const theme = extendTheme({
   fonts: {
     body: "'Press Start 2P'",
     heading: "'Press Start 2P'",
-  },
-  components: {
-    Button: {
-      color: {
-        _hover: "red",
-      },
-    },
-  },
+  },  
 });
 
 export default theme;
