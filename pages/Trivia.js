@@ -111,7 +111,7 @@ function Trivia() {
             The End!
           </Text>
           <Text fontSize={17} fontWeight="bold" color="black">
-            Answers correct: {questionsCorrect}
+            Answers correct: {questionsCorrect}/10
           </Text>
           <Button bg="white" mt={5} className="nes-btn" onClick={restart}>
             Play again
