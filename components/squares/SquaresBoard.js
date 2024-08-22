@@ -1,7 +1,7 @@
-import { Flex } from "@chakra-ui/react";
-import { useState } from "react";
-import { getColor } from "../../functions/getColor";
-import { motion } from "framer-motion";
+import { Flex } from '@chakra-ui/react';
+import { useState } from 'react';
+import { getColor } from '../../functions/getColor';
+import { motion } from 'framer-motion';
 export const SquaresBoard = ({
   dots,
   click,
@@ -15,7 +15,7 @@ export const SquaresBoard = ({
     if (!winner) setHover(value);
   };
   const getOpacity = (col, row) => {
-    if (winCoords.map((co) => co + "").some((c) => c === [col, row] + "")) {
+    if (winCoords.map((co) => co + '').some((c) => c === [col, row] + '')) {
       return 1;
     } else return 0.5;
   };
@@ -24,15 +24,16 @@ export const SquaresBoard = ({
     <>
       {dots && (
         <Flex
-          h={`70%`}
-          w={`70%`}
-          minW={["95vw", 0, 0, 0]}
-          maxW={["60vh"]}
-          maxH={["60vh"]}
-          bg="blackAlpha.800"
+          w={`70vw`}
+          minW={['95vw', 0, 0, 0]}
+          maxW={['60vh']}
+          maxH={['60vh']}
+          bg='blackAlpha.700'
+          p={2}
+          borderRadius={10}
           mt={6}
         >
-          <svg viewBox="0 0 320 320" height="100%" width="100%">
+          <svg viewBox='0 0 320 320' height='100%' width='100%'>
             {dots.map((line, row) => {
               return (
                 <g key={row * 100}>
@@ -46,19 +47,19 @@ export const SquaresBoard = ({
 
                     return (
                       <circle
-                        key={row + "" + col}
+                        key={row + '' + col}
                         cx={(row * 320) / (dots.length - 0.5) + 10}
                         cy={(col * 320) / (dots.length - 0.5) + 10}
                         r={
-                          hover === row + "" + col || color !== "white"
+                          hover === row + '' + col || color !== 'white'
                             ? 18 - dots.length
                             : 17 - dots.length
                         }
                         fill={color}
-                        onMouseOver={() => onMouseOver(row + "" + col)}
-                        onMouseLeave={() => setHover("")}
-                        stroke="transparent"
-                        strokeWidth={15}                        
+                        onMouseOver={() => onMouseOver(row + '' + col)}
+                        onMouseLeave={() => setHover('')}
+                        stroke='transparent'
+                        strokeWidth={15}
                         onClick={() => click(row, col)}
                         opacity={winner ? getOpacity(col, row) : 1}
                       />
@@ -96,7 +97,7 @@ export const SquaresBoard = ({
                           (dots.length - 0.5) +
                         10
                       }
-                      strokeLinejoin="round"
+                      strokeLinejoin='round'
                       strokeWidth={17 - dots.length}
                       stroke={winner === 1 ? playerOne.color : playerTwo.color}
                     />
