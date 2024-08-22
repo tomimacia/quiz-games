@@ -1,9 +1,6 @@
-import { Flex, Heading, OrderedList, Text } from "@chakra-ui/react";
+import { Flex, Heading, OrderedList, Text } from '@chakra-ui/react';
 
-export const Question = ({  
-  question,
-  children
-}) => {
+export const Question = ({ question, children }) => {
   return (
     <Flex flexDir='column'>
       <Text color='black' mb={5} fontSize={18}>

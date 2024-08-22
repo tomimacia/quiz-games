@@ -24,6 +24,7 @@ const Layout = ({ title, isIndex = false, isTrivia, opacity, children }) => {
         bg={isTrivia && 'yellow.300'}
         opacity={opacity}
         w='100%'
+        pb={'6rem'}
       >
         <Flex
           borderRadius={15}
