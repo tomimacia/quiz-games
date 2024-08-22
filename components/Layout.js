@@ -4,6 +4,7 @@ import React from 'react';
 import ArcadeBG from '../public/ArcadeBG.jpg';
 import ArcadeLogo from '../public/ArcadeLogo.png';
 import Link from 'next/link';
+import Footer from './Footer';
 const Layout = ({ title, isIndex = false, isTrivia, opacity, children }) => {
   return (
     <>
@@ -61,6 +62,7 @@ const Layout = ({ title, isIndex = false, isTrivia, opacity, children }) => {
           )}
           <Flex>{children}</Flex>
         </Flex>
+        <Footer />
       </Flex>
     </>
   );
